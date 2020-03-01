@@ -67,5 +67,6 @@ def douyin(topic):
         num = num+1
 ```
 # 3. Use the Function
-If you use this code, please follow the form of citation:
-Jin, Xin. (2020) How to Scrape the Hot Trending Data of Douyin and Download the Videos and Cover Images (Version 1.0)[Source Code]
+If you use this code, please follow the form of citation:  
+
+Jin, Xin. (2020) How to Scrape the Hot Trending Data of Douyin and Download the Videos and Cover Images (Version 1.0)[Source Code]. https://github.com/xjincomm/Douyin-Trend
