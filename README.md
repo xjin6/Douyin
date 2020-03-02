@@ -54,6 +54,7 @@ The complete source code could be found in **Douyin.ipynb**, if you use this cod
 
 Jin, Xin. (2020) Douyin Hot Trending Scraper and Video Downloader (Version 1.1) [Source Code]. https://github.com/xjincomm/Douyin  
 
+----
 Xin Jin  
 Senior Research Assistant  
 Dept. Media & Communication, City Univ. HK  
