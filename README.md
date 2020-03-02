@@ -52,4 +52,4 @@ for i in trend['word']:
 ```
 The complete source code could be found in **Douyin.ipynb**, if you use this code, please follow the form of citation and give me a star:
 
-Jin, Xin. (2020) How to Scrape the Hot Trending Data of Douyin and Download the Videos and Cover Images (Version 1.1) [Source Code]. https://github.com/xjincomm/Douyin
+Jin, Xin. (2020) Douyin Hot Trending Scraper and Video Downloader (Version 1.1) [Source Code]. https://github.com/xjincomm/Douyin
