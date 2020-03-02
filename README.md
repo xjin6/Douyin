@@ -1,36 +1,15 @@
 # 1. Trending
-- [Insert images in DataFrame with HTML format](https://stackoverflow.com/questions/53468558/adding-image-to-pandas-dataframe/53469293)
-```
-import os
-import json
-import requests
-import bs4 as bs
-import numpy as np
-import pandas as pd
-import urllib.request
-from IPython.core.display import HTML
-```
-To present the process simply, here one API scraped by CSDN user [考古学家lx](https://blog.csdn.net/weixin_43582101/article/details/103791795)
-```
-trending_api = 'Your API Here' #but in fact, the API should be derived by Mobile-PC interaction
-re=requests.get(trending_api)
-soup=bs.BeautifulSoup(re.content,'html.parser')
-last_update = json.loads(soup.text)['data']['active_time']
-trending_data = json.loads(soup.text)['data']['word_list']
-trend = pd.DataFrame(trending_data)
-date=last_update.split(' ')[0]
-print('The last update time: '+last_update)
-Word_cover=[]
-for i in trend['word_cover']:
-    if type(i)==dict:
-        Word_cover.append(i['url_list'][0])
-    else:
-        Word_cover.append(None)
-```
-# 2. Function Package
+- The **Trending API** and **Topic API** is derived by an emulater named [网易MuMu模拟器](https://mumu.163.com/), and [Charles Proxy](https://www.charlesproxy.com/);
+- Here I use the scraped API of CSDN user [考古学家lx](https://me.csdn.net/weixin_43582101) directly;
+- It is not an official API [[Reference]](https://blog.csdn.net/weixin_43582101/article/details/103791795).
+
+# 2. Video
+- With functions as follows, we can get variabels of description, account name, verify, share count, forward count, like count, comment count, and download count of each video;
+- And download original videos
+- Core function:
 ```
 def douyin(topic):
-    os.mkdir('./'+topic)
+    generate_path('./'+topic)
     topic_api='https://aweme-hl.snssdk.com/aweme/v1/hot/search/video/list/?hotword='
     re=requests.get(topic_api+topic)
     soup=bs.BeautifulSoup(re.content,'html.parser')
@@ -57,16 +36,20 @@ def douyin(topic):
     df.to_csv('./'+topic+'/'+topic+'.csv',encoding='utf-8-sig',index=False)
     df.to_html('./'+topic+'/'+topic+'.html',escape=False)
     video_visual = HTML(df.to_html(escape=False ,formatters=df['cover_visual']))
-    #def cover(cover_url,file_name):
-        #return urllib.request.urlretrieve(cover_url,file_name)
-    def video(video_url,file_name):
-        return urllib.request.urlretrieve(video_url,file_name)
     num=0
     for video_url in df['video_url']:
         video(video_url,'./'+topic+'/'+str(num)+'.mp4')
         num = num+1
 ```
-# 3. Use the Function
-If you use this code, please follow the form of citation:  
 
-Jin, Xin. (2020) How to Scrape the Hot Trending Data of Douyin and Download the Videos and Cover Images (Version 1.0)[Source Code]. https://github.com/xjincomm/Douyin-Trend
+# 3. Use the Function
+```
+# Test with one single topic
+douyin('Your topic here')
+# Scrape the whole data of all topics
+for i in trend['word']:
+    douyin(i)
+```
+The complete source code could be found in **Douyin.ipynb**, if you use this code, please follow the form of citation and give me a star:
+
+Jin, Xin. (2020) How to Scrape the Hot Trending Data of Douyin and Download the Videos and Cover Images (Version 1.1)[Source Code]. https://github.com/xjincomm/Douyin
