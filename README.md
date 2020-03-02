@@ -1,7 +1,7 @@
 # 1. Trending
 - The **Trending API** and **Topic API** is derived by an emulater named [网易MuMu模拟器](https://mumu.163.com/), and [Charles Proxy](https://www.charlesproxy.com/);
 - Here I use the scraped API of CSDN user [考古学家lx](https://me.csdn.net/weixin_43582101) directly;
-- It is not an official API [[Reference]](https://blog.csdn.net/weixin_43582101/article/details/103791795).
+- It is not an official API [[Reference]](https://blog.csdn.net/weixin_43582101/article/details/103791795). 
 
 # 2. Video
 - With functions as follows, we can get variabels of description, account name, verify, share count, forward count, like count, comment count, and download count of each video;
