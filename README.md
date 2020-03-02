@@ -50,12 +50,12 @@ douyin('Your topic here')
 for i in trend['word']:
     douyin(i)
 ```
-The complete source code could be found in **Douyin.ipynb**, if you use this code, please follow the form of citation and give me a star:
+The complete source code could be found in **Douyin.ipynb**, if you use this code, please follow the form of citation and give me a star ⭐⭐⭐:
 
 Jin, Xin. (2020) Douyin Hot Trending Scraper and Video Downloader (Version 1.1) [Source Code]. https://github.com/xjincomm/Douyin  
 
 ----
 Xin Jin  
 Senior Research Assistant  
-Dept. Media & Communication, City Univ. HK  
+Dept. Media and Communication, City Univ. HK  
 [About](www.xjin.tech) | [LinkedIn](linkedin.com/in/xjin613/) | [Twitter](https://twitter.com/xjin_comm) | xin.jin@cityu.edu.hk
