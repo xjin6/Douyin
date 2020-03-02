@@ -57,4 +57,4 @@ Jin, Xin. (2020) Douyin Hot Trending Scraper and Video Downloader (Version 1.1) 
 Xin Jin  
 Senior Research Assistant  
 Dept. Media & Communication, City Univ. HK  
-[About](www.xjin.tech) | [LinkedIn](linkedin.com/in/xjin613/) | xin.jin@cityu.edu.hk | 852 5749 9397
+[About](www.xjin.tech) | [LinkedIn](linkedin.com/in/xjin613/) | [Twitter](https://twitter.com/xjin_comm) | xin.jin@cityu.edu.hk
