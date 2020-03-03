@@ -7,7 +7,7 @@
 - With functions as follows, we can get variabels of description, account name, verify, share count, forward count, like count, comment count, and download count of each video;
 - And download original videos
 - Core function:
-```
+```python
 def douyin(topic):
     generate_path('./'+topic)
     topic_api='https://aweme-hl.snssdk.com/aweme/v1/hot/search/video/list/?hotword='
@@ -43,7 +43,7 @@ def douyin(topic):
 ```
 
 # 3. Use the Function
-```
+```python
 # Test with one single topic
 douyin('Your topic here')
 # Scrape the whole data of all topics
@@ -53,7 +53,11 @@ for i in trend['word']:
 The complete source code could be found in **Douyin.ipynb**, if you use this code, please follow the form of citation and give me a star ⭐⭐⭐:
 
 Jin, Xin. (2020) Douyin Hot Trending Scraper and Video Downloader (Version 1.1) [Source Code]. https://github.com/xjincomm/Douyin  
-
+# 4. Update Log and Notes  
+This set of code was completed and tested on Mac OS environment which may be a little bit different from Windows, some reminders are as follows:
+- For the core function, just delete or # the line of  
+```df.to_html('./'+topic+'/'+topic+'.html',escape=False)```
+- For the part of __1. Trending__ of the original Jupyter Notebook code, please delete or # the lines of ```trend.to_html('./trend/trend_'+last_update+'.html', escape=False)```
 ----
 Xin Jin  
 Senior Research Assistant  
