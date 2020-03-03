@@ -53,11 +53,12 @@ for i in trend['word']:
 The complete source code could be found in **Douyin.ipynb**, if you use this code, please follow the form of citation and give me a star ⭐⭐⭐:
 
 Jin, Xin. (2020) Douyin Hot Trending Scraper and Video Downloader (Version 1.1) [Source Code]. https://github.com/xjincomm/Douyin  
-# 4. Update Log and Notes  
-This set of code was completed and tested on Mac OS environment which may be a little bit different from Windows, some reminders are as follows:
+# 4. Update Log and Notes
+## 3 Mar 2020:
+This set of code was completed and tested on Mac OS environment which may be a little bit different from Windows. Some reminders are as follows:
 - For the core function, just delete or # the line of  
 ```df.to_html('./'+topic+'/'+topic+'.html',escape=False)```
-- For the part of __1. Trending__ of the original Jupyter Notebook code, please delete or # the lines of ```trend.to_html('./trend/trend_'+last_update+'.html', escape=False)```
+- For the part of __1. Trending__ of the original Jupyter Notebook code, please delete or # the line of ```trend.to_html('./trend/trend_'+last_update+'.html', escape=False)```
 ----
 Xin Jin  
 Senior Research Assistant  
