@@ -54,7 +54,7 @@ The complete source code could be found in **Douyin.ipynb**, if you use this cod
 
 Jin, Xin. (2020) Douyin Hot Trending Scraper and Video Downloader (Version 1.1) [Source Code]. https://github.com/xjincomm/Douyin  
 # 4. Update Log and Notes
-## 3 Mar 2020:
+__3 Mar 2020__:  
 This set of code was completed and tested on Mac OS environment which may be a little bit different from Windows. Some reminders are as follows:
 - For the core function, just delete or # the line of  
 ```df.to_html('./'+topic+'/'+topic+'.html',escape=False)```
