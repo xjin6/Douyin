@@ -8,7 +8,7 @@
 - And download original videos
 - Core function:
 ```python
-def douyin(topic):
+def scraper(topic):
     generate_path('./'+topic)
     topic_api='https://aweme-hl.snssdk.com/aweme/v1/hot/search/video/list/?hotword='
     re=requests.get(topic_api+topic)
@@ -16,6 +16,8 @@ def douyin(topic):
     data = json.loads(soup.text)
     data = data['aweme_list']
     desc = [info['desc'] for info in data]
+    time_stamp = [info['create_time'] for info in data]
+    create_time = [time(info['create_time']) for info in data]
     nickname = [info['author']['nickname'] for info in data]
     verify = [info['author']['custom_verify'] for info in data]
     share_count = [info['statistics']['share_count'] for info in data]
@@ -27,28 +29,36 @@ def douyin(topic):
     cover_visual = ['<img src="'+ url + '" width="100" >' for url in cover_url]
     video_url = []
     for info in data:
-        video_url.append([i for i in info['video']['download_addr']['url_list'] if 'default' in i][0])
-    df=pd.DataFrame({'desc':desc,'nickname':nickname,'verify':verify,
-                    'share_count':share_count,'forward_count':forward_count,
+        try:
+            video_url.append([i for i in info['video']['download_addr']['url_list'] if 'default' in i][0])
+        except:
+            video_url.append(None)
+    df=pd.DataFrame({'desc':desc,'nickname':nickname,'verify':verify,'time_stamp':time_stamp,
+                     'create_time':create_time,'share_count':share_count,'forward_count':forward_count,
                     'like_count':like_count,'comment_count':comment_count,
-                    'download_count':download_count,'video_url':video_url,
+                     'download_count':download_count,'video_url':video_url,
                     'cover_visual':cover_visual})
     df.to_csv('./'+topic+'/'+topic+'.csv',encoding='utf-8-sig',index=False)
-    df.to_html('./'+topic+'/'+topic+'.html',escape=False)
-    video_visual = HTML(df.to_html(escape=False ,formatters=df['cover_visual']))
-    num=0
-    for video_url in df['video_url']:
-        video(video_url,'./'+topic+'/'+str(num)+'.mp4')
-        num = num+1
+    #df.to_html('./'+topic+'/'+topic+'.html',escape=False)
+    #video_visual = HTML(df.to_html(escape=False ,formatters=df['cover_visual']))
+    for num in range(0,len(data)):
+        try:
+            video(df['video_url'][num],'./'+topic+'/'+str(df['time_stamp'][num])+'.mp4')
+            
+            print('topic: '+topic+', video #'+str(num)+': '+str(df['time_stamp'][num])+'......Successed')
+        except:
+            print('topic: '+topic+', video #'+str(num)+': '+str(df['time_stamp'][num])+'......Failed')
+            continue
 ```
 
 # 3. Use the Function
+Test with one single topic, remember to type in the topic
 ```python
-# Test with one single topic
-douyin('Your topic here')
-# Scrape the whole data of all topics
-for i in trend['word']:
-    douyin(i)
+douyin_topic('中国科研团队发现新冠病毒已突变')
+```
+Use only one line of codes to get all data and download all videos of hot trending rank
+```python
+douyin_trend()
 ```
 The complete source code could be found in **Douyin.ipynb**, if you use this code, please follow the form of citation and give me a star ⭐⭐⭐:
 
