@@ -39,13 +39,11 @@ def scraper(topic):
                      'download_count':download_count,'video_url':video_url,
                     'cover_visual':cover_visual})
     df.to_csv('./'+topic+'/'+topic+'.csv',encoding='utf-8-sig',index=False)
-    #df.to_html('./'+topic+'/'+topic+'.html',escape=False)
-    #video_visual = HTML(df.to_html(escape=False ,formatters=df['cover_visual']))
     for num in range(0,len(data)):
         try:
             video(df['video_url'][num],'./'+topic+'/'+str(df['time_stamp'][num])+'.mp4')
             
-            print('topic: '+topic+', video #'+str(num)+': '+str(df['time_stamp'][num])+'......Successed')
+            print('topic: '+topic+', video #'+str(num)+': '+str(df['time_stamp'][num])+'......Succeeded')
         except:
             print('topic: '+topic+', video #'+str(num)+': '+str(df['time_stamp'][num])+'......Failed')
             continue
