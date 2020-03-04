@@ -66,9 +66,10 @@ __3 Mar 2020__:
 This set of code was completed and tested on Mac OS environment which may be a little bit different from Windows. Some reminders are as follows:
 - For the core function, just delete or # the line of
 ```df.to_html('./'+topic+'/'+topic+'.html',escape=False)```
-- For the part of __1. Trending__ of the original Jupyter Notebook code, please delete or # the line of ```trend.to_html('./trend/trend_'+last_update+'.html', escape=False)```
-__4 Mar 2020__:
-I have set the "try" to avoid the situtation of empty list of video_url and use the timestamp of create_time of each video to name itself
+- For the part of __1. Trending__ of the original Jupyter Notebook code, please delete or # the line of ```trend.to_html('./trend/trend_'+last_update+'.html', escape=False)```  
+
+__4 Mar 2020__:  
+- I have set the "try" to avoid the situtation of empty list of video_url and use the timestamp of create_time of each video to name itself
 ```try:video(df['video_url'][num],'./'+topic+'/'+str(df['time_stamp'][num])+'.mp4')```  
 
 ----
