@@ -74,6 +74,4 @@ __4 Mar 2020__:
 
 ----
 Xin Jin  
-Senior Research Assistant  
-Dept. Media and Communication, City Univ. HK  
-[About](www.xjin.tech) | [LinkedIn](linkedin.com/in/xjin613/) | [Twitter](https://twitter.com/xjin_comm) | xin.jin@cityu.edu.hk
+xjin6@outlook.com
